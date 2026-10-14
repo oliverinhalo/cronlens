@@ -1,0 +1,133 @@
+/* Design tokens — Cronlens. Feeling: precise. Accent: amber, the colour of the
+ * hour that goes missing. Components reference tokens, never raw colours. */
+
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2')
+    format('woff2-variations');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2')
+    format('woff2-variations');
+}
+
+:root {
+  /* Neutral ramp — warm paper to ink. */
+  --n-50: #f7f4ec;
+  --n-100: #efebe0;
+  --n-200: #e3ddcd;
+  --n-300: #cfc8b5;
+  --n-400: #a39c88;
+  --n-500: #686253;
+  --n-600: #4f4a3e;
+  --n-700: #38342b;
+  --n-800: #25221c;
+  --n-900: #16140f;
+
+  --accent-500: #b26a00;
+  --accent-600: #8a5200;
+  --accent-contrast: #ffffff;
+
+  --danger: #a4332b;
+  --success: #2c6a43;
+
+  /* Semantic layer — this is what components use. */
+  --surface: var(--n-50);
+  --surface-raised: #fffdf8;
+  --surface-sunken: var(--n-100);
+  --border: var(--n-200);
+  --border-strong: var(--n-300);
+  --text: var(--n-900);
+  --text-muted: var(--n-600);
+  --text-faint: var(--n-500);
+  --accent: var(--accent-600);
+  --accent-text: var(--accent-contrast);
+  --focus: var(--accent-500);
+  --hazard-bg: #f6e3de;
+  --safe-bg: #e2eedf;
+  --hatch: #cfc8b5;
+
+  /* Space — one scale, no values between its steps. */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+
+  /* Type — a 1.25 scale. Use only its steps. */
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-lg: 1.25rem;
+  --t-xl: 1.5625rem;
+  --t-2xl: 1.953rem;
+  --t-3xl: 2.441rem;
+
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Sharp on purpose: it is a measuring tool. */
+  --radius: 2px;
+  --radius-lg: 4px;
+
+  --shadow-sm: none;
+  --shadow: none;
+
+  --dur-state: 120ms;
+  --dur-move: 200ms;
+  --dur-enter: 300ms;
+  --ease-enter: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark mode is a designed ink palette, not an inversion. Declared twice, without
+ * CSS nesting: once for the system preference (unless the user chose light), once
+ * for an explicit choice. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --surface: #0f0e0b;
+    --surface-raised: #181611;
+    --surface-sunken: #0a0908;
+    --border: #2b2820;
+    --border-strong: #3d3a2f;
+    --text: #ece8dc;
+    --text-muted: #b0aa99;
+    --text-faint: #8d8778;
+    --accent: #e3a94a;
+    --accent-text: #14110a;
+    --focus: #e3a94a;
+    --danger: #ee9488;
+    --success: #8cc59f;
+    --hazard-bg: #3a1f1b;
+    --safe-bg: #1c2d21;
+    --hatch: #3d3a2f;
+  }
+}
+
+:root[data-theme='dark'] {
+  --surface: #0f0e0b;
+  --surface-raised: #181611;
+  --surface-sunken: #0a0908;
+  --border: #2b2820;
+  --border-strong: #3d3a2f;
+  --text: #ece8dc;
+  --text-muted: #b0aa99;
+  --text-faint: #8d8778;
+  --accent: #e3a94a;
+  --accent-text: #14110a;
+  --focus: #e3a94a;
+  --danger: #ee9488;
+  --success: #8cc59f;
+  --hazard-bg: #3a1f1b;
+  --safe-bg: #1c2d21;
+  --hatch: #3d3a2f;
+}

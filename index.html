@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Cron DST checker — will your cron job skip or repeat when clocks change? | Cronlens
+    </title>
+    <meta
+      name="description"
+      content="Paste a cron expression and a time zone. See which runs a daylight saving change skips or repeats, the next ten run times, and a plain-English reading. Free, private, in your browser."
+    />
+    <link rel="canonical" href="https://cronlens.pages.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Cronlens — will your cron job survive the clocks changing?"
+    />
+    <meta
+      property="og:description"
+      content="See what a cron schedule really does on the day the clocks change."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:url" content="https://cronlens.pages.dev/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f0e0b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cronlens",
+        "description": "See what a cron schedule really does on the day the clocks change.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+
+    <script>
+      // Apply the stored theme before first paint so there is no flash.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+      } catch (e) {
+        /* private mode: fall back to the media query */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
